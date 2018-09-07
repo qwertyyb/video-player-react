@@ -14,7 +14,8 @@ class ReactVideoPlayer extends Component {
     const videoDom = this.videoRef.current;
     const { options, src } = this.props;
     if (src.endsWith('.flv')) {
-      const flvjs = await import('flv.js').then(res => res.default);
+      const flvjs = await import('flv.js/dist/flv.min.js');
+      console.log(flvjs)
       const flvPlayer = flvjs.createPlayer({
         type: 'flv',
         url: src
