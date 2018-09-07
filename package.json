@@ -1,7 +1,8 @@
 {
   "name": "video-player-react",
   "version": "0.1.0",
-  "private": true,
+  "description": "a video player react component base plyr and flv.js",
+  "main": "src/player.js",
   "dependencies": {
     "flv.js": "^1.4.2",
     "plyr": "^3.4.3",
@@ -14,5 +15,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "keywords": [
+    "video player",
+    "video",
+    "plyr",
+    "flv.js",
+    "react video player",
+    "h5 player",
+    "h5 video player"
+  ],
+  "author": "qwertyyb@foxmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/qwertyyb/video-player-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qwertyyb/video-player-react/issues"
+  },
+  "homepage": "https://github.com/qwertyyb/video-player-react#readme"
 }
