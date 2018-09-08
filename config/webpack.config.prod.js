@@ -44,14 +44,18 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: false,
   // In production, we only want to load the polyfills and the app code.
-  entry: paths.playerEntry,
+  entry: {
+    player: path.resolve(__dirname, '../src/player.js'),
+    baseplayer: path.resolve(__dirname, '../src/BasePlayer.js'),
+    flvplayer: path.resolve(__dirname, '../src/FlvPlayer.js'),
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
-    filename: 'player.min.js',
+    filename: '[name].min.js',
     chunkFilename: 'vendor.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
@@ -111,10 +115,7 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: [
-          paths.appSrc,
-          '../node_modules/flv.js/'
-        ]
+        include: paths.appSrc
       },
       {
         // "oneOf" will traverse all following loaders until one will
